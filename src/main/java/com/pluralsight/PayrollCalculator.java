@@ -1,7 +1,6 @@
 package com.pluralsight;
 
-import java.util.Scanner;     // import the Scanner class
-import java.util.*;
+import java.util.Scanner;
 
 public class PayrollCalculator {
     public static void main(String[] args) {
@@ -23,15 +22,20 @@ public class PayrollCalculator {
         // Calculate gross pay
         double grossPay = hoursWorked * payRate;
 
+        // BONUS: Calculate overtime if employee worked more than 40 hours
+        if (hoursWorked > 40) {
+
+            double overtimeHours = hoursWorked - 40;
+            double regularPay = 40 * payRate;
+            double overtimePay = overtimeHours * payRate * 1.5;
+
+            grossPay = regularPay + overtimePay;
+        }
+
         // Display results
         System.out.println("Employee: " + name);
-        System.out.println("Gross Pay: $" + grossPay);
+        System.out.printf("Gross Pay: $%.2f%n", grossPay);
 
         read.close();
-
-
-
     }
-
-
 }
