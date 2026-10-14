@@ -20,6 +20,14 @@ public class PayrollCalculator {
         System.out.print("Enter pay rate: ");
         double payRate = read.nextDouble();
 
+        // Calculate gross pay
+        double grossPay = hoursWorked * payRate;
+
+        // Display results
+        System.out.println("Employee: " + name);
+        System.out.println("Gross Pay: $" + grossPay);
+
+        read.close();
 
 
 
